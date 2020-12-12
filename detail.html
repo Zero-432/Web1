@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon -->
+  <!-- <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon"> -->
+  <!-- Carousel -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.core.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.theme.min.css">
+  <!-- Custom StyleSheet -->
+  <link href="./detail_p_styles.css" rel="stylesheet" />
+  <title>TheBigCityShoes</title>
+  <style>
+    .product__footer h3 {
+      height: 72.8px;
+    }
+
+    .product__header {
+      height: 167px;
+    }
+  </style>
+</head>
+
+<body id="product-info">
+  <header id="header" class="header">
+    <div class="navigation">
+      <div class="container">
+        <nav class="nav">
+          <div class="nav__hamburger">
+            <svg>
+              <use xlink:href="images/sprite.svg#icon-menu" />
+            </svg>
+          </div>
+
+          <div class="nav__logo">
+            <a href="mainpage.html" class="scroll-link" style="font-family:'Star Jedi'">
+              THEBiGCiTYSHoES
+            </a>
+          </div>
+
+          <div class="nav__menu">
+            <div class="menu__top">
+              <span class="nav__category"></span>
+              <a href="#" class="close__toggle">
+                <svg>
+                  <use xlink:href="./images/sprite.svg#icon-cross"></use>
+                </svg>
+              </a>
+            </div>
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="/" class="nav__link">NAM</a>
+              </li>
+              <li class="nav__item">
+                <a href="/" class="nav__link">NỮ</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">TRẺ EM</a>
+              </li>
+              <li class="nav__item">
+                <a href="/" class="nav__link">PHỤ KIỆN</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">SALES</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Blog</a>
+              </li>
+
+            </ul>
+          </div>
+
+          <div class="nav__icons">
+            <a href="#" class="icon__item">
+              <svg class="icon__user">
+                <use xlink:href="./images/sprite.svg#icon-user"></use>
+              </svg>
+            </a>
+
+            <a href="#" class="icon__item">
+              <svg class="icon__search">
+                <use xlink:href="./images/sprite.svg#icon-search"></use>
+              </svg>
+            </a>
+
+            <a href="#" class="icon__item">
+              <svg class="icon__cart">
+                <use xlink:href="images/sprite.svg#icon-shopping-basket" />
+              </svg>
+              <span id="cart__total">1</span>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="page__title-area">
+      <div class="container">
+        <div class="page__title-container">
+          <ul class="page__titles">
+            <li>
+              <a href="/">
+                <svg>
+                  <use xlink:href="./images/sprite.svg#icon-home"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="page__title"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <!-- Products Details -->
+      <section class="section product-details__section">
+        <div class="product-detail__container">
+          <div class="product-detail__left">
+            <div class="details__container--left">
+              <div class="product__pictures">
+                <!-- <div class="pictures__container">
+                  <img class="picture" src="Product1/20.jpg" id="pic20">
+                </div>
+                <div class="pictures__container">
+                  <img class="picture" src="Product1/2.jpg" id="pic2">
+                </div>
+                <div class="pictures__container">
+                  <img class="picture" src="Product1/3.jpg" id="pic3">
+                </div>
+                <div class="pictures__container">
+                  <img class="picture" src="Product1/4.jpg" id="pic4">
+                </div>
+                <div class="pictures__container">
+                  <img class="picture" src="Product1/5.jpg" id="pic5">
+                </div> -->
+              </div>
+              <div class="product__picture" id="product__picture">
+                <!-- <div class="rect" id="rect"></div> -->
+                <div class="picture__container tab-pane active" id="pic">
+                  <img id="pic" />
+
+                </div>
+              </div>
+              <div class="zoom" id="zoom"></div>
+            </div>
+
+
+          </div>
+
+          <div class="product-detail__right">
+            <div class="product-detail__content">
+              <h3></h3>
+              <div class="price">
+                <span>Price:</span>
+                <span class="new__price"></span>
+              </div>
+              <div class="product__info-container">
+                <ul class="product__info">
+                  <li class="select">
+
+                  </li>
+                  <li>
+
+                    <div class="input-counter">
+                      <span>Quantity:</span>
+                      <div>
+                        <span onclick="" class="minus-btn">
+                          <svg>
+                            <use xlink:href="./images/sprite.svg#icon-minus"></use>
+                          </svg>
+                        </span>
+                        <input type="text" min="1" value="1" max="10" class="counter-btn">
+                        <span class="plus-btn">
+                          <svg>
+                            <use xlink:href="./images/sprite.svg#icon-plus"></use>
+                          </svg>
+                        </span>
+                        &nbsp;&nbsp;&nbsp;
+                        <div class="input-counter">
+                          <span>Size:</span>
+                          <div>
+                            <span class="minus-btn">
+                              <svg>
+                                <use xlink:href="./images/sprite.svg#icon-minus"></use>
+                              </svg>
+                            </span>
+                            <input type="text" min="35" value="40" max="45" class="counter-btn">
+                            <span class="plus-btn">
+                              <svg>
+                                <use xlink:href="./images/sprite.svg#icon-plus"></use>
+                              </svg>
+                            </span>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+
+
+                  <li>
+                    <span>Brand:</span>
+                    <a>The Big City Shoes</a>
+                  </li>
+                  <li>
+                    <span class="product-color">Product Color:</span>
+                    <a href="#"></a>
+                  </li>
+                  <li>
+                    <span>Availability:</span>
+                    <a href="#" class="in-stock"></a>
+                  </li>
+                </ul>
+                <div class="product-details__btn">
+                  <a class="add" href="#">
+                    <span>
+                      <svg>
+                        <use xlink:href="./images/sprite.svg#icon-cart-plus"></use>
+                      </svg>
+                    </span>
+                    ADD TO CART
+                  </a>
+                  <a class="buy" href="#">
+                    <span>
+                      <svg>
+                        <use xlink:href="./images/sprite.svg#icon-credit-card"></use>
+                      </svg>
+                    </span>
+                    BUY NOW
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-detail__bottom">
+          <div class="title__container tabs">
+            <div class="section__titles category__titles ">
+              <div class="section__title detail-btn active" data-id="description">
+                <span class="dot"></span>
+                <h1 class="primary__title">Description</h1>
+              </div>
+            </div>
+            <div class="section__titles">
+              <div class="section__title detail-btn" data-id="shipping">
+                <span class="dot"></span>
+                <h1 class="primary__title">Shipping Details</h1>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail__content">
+            <div class="content active" id="description">
+              <p>
+                Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam
+                dolor, elementum etos lobortis des mollis ut risus. Sedcus faucibus an sullamcorper mattis drostique des
+                commodo pharetras loremos.Donec pretium egestas sapien et mollis.
+              </p>
+              <h2>Sample Unordered List</h2>
+              <ul>
+                <li>Comodous in tempor ullamcorper miaculis</li>
+                <li>Pellentesque vitae neque mollis urna mattis laoreet.</li>
+                <li>Divamus sit amet purus justo.</li>
+                <li>Proin molestie egestas orci ac suscipit risus posuere loremous</li>
+              </ul>
+              <h2>Sample Ordered Lista</h2>
+              <ol>
+                <li>Comodous in tempor ullamcorper miaculis</li>
+                <li>Pellentesque vitae neque mollis urna mattis laoreet.</li>
+                <li>Divamus sit amet purus justo.</li>
+                <li>Proin molestie egestas orci ac suscipit risus posuere loremous</li>
+              </ol>
+              <h2>Sample Paragraph Text</h2>
+              <p>
+                Praesent vestibulum congue tellus at fringilla. Curabitur vitae semper sem, eu convallis est. Cras
+                felis
+                nunc commodo eu convallis vitae interdum non nisl. Maecenas ac est sit amet augue pharetra convallis nec
+                danos dui. Cras suscipit quam et turpis eleifend vitae malesuada magna congue. Damus id ullamcorper
+                neque. Sed vitae mi a mi pretium aliquet ac sed elit. Pellentesque nulla eros accumsan quis justo at
+                tincidunt lobortis denimes loremous. Suspendisse vestibulum lectus in lectus volutpat, ut dapibus purus
+                pulvinar. Vestibulum sit amet auctor ipsum.
+              </p>
+            </div>
+
+            <div class="content" id="shipping">
+              <h3>Returns Policy</h3>
+              <p>
+                You may return most new, unopened items within 30 days of delivery for a full refund. We'll also pay
+                the return shipping costs if the return is a result of our error (you received an incorrect or defective
+                item, etc.).
+              </p>
+              <p>
+                You should expect to receive your refund within four weeks of giving your package to the return
+                shipper, however, in many cases you will receive a refund more quickly. This time period includes the
+                transit time for us to receive your return from the shipper (5 to 10 business days), the time it takes
+                us to process your return once we receive it (3 to 5 business days), and the time it takes your bank to
+                process our refund request (5 to 10 business days).
+              </p>
+              <p>
+                If you need to return an item, simply login to your account, view the order using the 'Complete
+                Orders' link under the My Account menu and click the Return Item(s) button. We'll notify you via
+                e-mail of your refund once we've received and processed the returned item.
+              </p>
+              <h3>Shipping</h3>
+              <p>
+                We can ship to virtually any address in the world. Note that there are restrictions on some products,
+                and some products cannot be shipped to international destinations.
+              </p>
+              <p>
+                When you place an order, we will estimate shipping and delivery dates for you based on the
+                availability of your items and the shipping options you choose. Depending on the shipping provider you
+                choose, shipping date estimates may appear on the shipping quotes page.
+              </p>
+              <p>
+                Please also note that the shipping rates for many items we sell are weight-based. The weight of any
+                such item can be found on its detail page. To reflect the policies of the shipping companies we use, all
+                weights will be rounded up to the next full pound.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Products -->
+      <section class="section related__products">
+        <div class="title__container">
+          <div class="section__title filter-btn active">
+            <span class=" dot"></span>
+            <h1 class="primary__title">Related Products</h1>
+          </div>
+        </div>
+      </section>
+      <!-- Latest Products -->
+      <section class="section latest__products">
+        <div class="title__container">
+          <div class="section__title filter-btn active">
+            <span class="dot"></span>
+            <h1 class="primary__title">Latest Products</h1>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <a href="#header" class="goto-top scroll-link">
+    <svg>
+      <use xlink:href="./images/sprite.svg#icon-arrow-up"></use>
+    </svg>
+  </a>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Glide Carousel Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"></script>
+  <!-- Custom JavaScript -->
+  <script src="./js/products.js"></script>
+  <script src="./js/index.js"></script>
+  <script src="./js/slider.js"></script>
+  <script src="./main.js"></script>
+</body>
+
+</html>
