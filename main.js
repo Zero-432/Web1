@@ -76,7 +76,7 @@ function showDetail(id) {
 			for (let i = 0; i < product.media.link.length; i++) {
 				$('.product__pictures').append(
 					$('<div/>').addClass('pictures__container')
-						.prepend(`<img id="pic${i + 1}" class="picture" src="${product.media.link[i]}">`)
+						.prepend(`<img id="pic${i + 1}" class="picture" src="${product.media.link[i]}" onClick="clickImgs(this)">`)
 				)
 			}
 		}
@@ -87,15 +87,10 @@ function showDetail(id) {
 	lastedProducts();
 }
 // Tab_Gallery
-// $(".picture").on("click", function(imgs){
-// })
 function clickImgs(imgs) {
-	for (i = 1; i <= product.media.link.length; i++) {
-		var expandImg = document.getElementById("pic${i}");
-		var imgText = document.getElementById("pic");
-		expandImg.src = imgs.src;
-		expandImg.parentElement.style.display = "block"
-	}
+	var expandImg = document.getElementById("expandedImg");
+	expandImg.src = imgs.src;
+	expandImg.parentElement.style.display = "block"
 }
 
 $(".minus_plus").on("click", function () {
@@ -144,7 +139,7 @@ function createPagination(total, limit) {
 		}
 	})
 }
-$(".pagination").ready(function () {
+$(document).ready(function () {
 	var i = 1;
 	getData(i);
 	getProductsCount();
@@ -160,9 +155,29 @@ $(".pagination").ready(function () {
 			i -= 1;
 		}
 	})
-	$('#filter').click(() => {
+	$('#filter_price_1').click(() => {
 		let filtered_product = product_list.filter(x => x.productPrice == '550.000 VND');
 		console.log(filtered_product, product_list)
+		renderProductList(filtered_product);
+	})
+	$('#filter_price_2').click(() => {
+		let filtered_product = product_list.filter(x => x.productPrice == '450.000 VND');
+		renderProductList(filtered_product);
+	})
+	$('#filter_color_1').click(() => {
+		let filtered_product = product_list.filter(x => x.productColor == 'Insignia/Sulphur');
+		renderProductList(filtered_product);
+	})
+	$('#filter_color_2').click(() => {
+		let filtered_product = product_list.filter(x => x.productColor == 'Dark Grey');
+		renderProductList(filtered_product);
+	})
+	$('#filter_brand_1').click(() => {
+		let filtered_product = product_list.filter(x => x.productName.substr(0, 5) == 'Urbas');
+		renderProductList(filtered_product);
+	})
+	$('#filter_brand_2').click(() => {
+		let filtered_product = product_list.filter(x => x.productName.substr(0, 6) == 'Vintas');
 		renderProductList(filtered_product);
 	})
 });
