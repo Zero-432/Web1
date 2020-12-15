@@ -10,6 +10,7 @@
   <!-- Carousel -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.core.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.theme.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <!-- Custom StyleSheet -->
   <link href="./detail_p_styles.css" rel="stylesheet" />
   <title>TheBigCityShoes</title>
@@ -30,9 +31,7 @@
       <div class="container">
         <nav class="nav">
           <div class="nav__hamburger">
-            <svg>
-              <use xlink:href="images/sprite.svg#icon-menu" />
-            </svg>
+            <i class="fas fa-bars"></i>
           </div>
 
           <div class="nav__logo">
@@ -45,9 +44,7 @@
             <div class="menu__top">
               <span class="nav__category"></span>
               <a href="#" class="close__toggle">
-                <svg>
-                  <use xlink:href="./images/sprite.svg#icon-cross"></use>
-                </svg>
+                <i class="fas fa-cross"></i>
               </a>
             </div>
             <ul class="nav__list">
@@ -75,21 +72,15 @@
 
           <div class="nav__icons">
             <a href="#" class="icon__item">
-              <svg class="icon__user">
-                <use xlink:href="./images/sprite.svg#icon-user"></use>
-              </svg>
+              <i class="fas fa-user"></i>
             </a>
 
             <a href="#" class="icon__item">
-              <svg class="icon__search">
-                <use xlink:href="./images/sprite.svg#icon-search"></use>
-              </svg>
+              <i class="fas fa-search"></i>
             </a>
 
             <a href="#" class="icon__item">
-              <svg class="icon__cart">
-                <use xlink:href="images/sprite.svg#icon-shopping-basket" />
-              </svg>
+              <i class="fas fa-shopping-cart"></i>
               <span id="cart__total">1</span>
             </a>
           </div>
@@ -102,9 +93,7 @@
           <ul class="page__titles">
             <li>
               <a href="/">
-                <svg>
-                  <use xlink:href="./images/sprite.svg#icon-home"></use>
-                </svg>
+                <i class="fas fa-home"></i>
               </a>
             </li>
             <li class="page__title"></li>
@@ -141,8 +130,7 @@
               <div class="product__picture" id="product__picture">
                 <!-- <div class="rect" id="rect"></div> -->
                 <div class="picture__container tab-pane active" id="pic">
-                  <img id="pic" />
-
+                  <img id="pic"  onclick="clickImgs(this)"/>
                 </div>
               </div>
               <div class="zoom" id="zoom"></div>
@@ -168,31 +156,27 @@
                     <div class="input-counter">
                       <span>Quantity:</span>
                       <div>
-                        <span onclick="" class="minus-btn">
-                          <svg>
-                            <use xlink:href="./images/sprite.svg#icon-minus"></use>
-                          </svg>
-                        </span>
-                        <input type="text" min="1" value="1" max="10" class="counter-btn">
-                        <span class="plus-btn">
-                          <svg>
-                            <use xlink:href="./images/sprite.svg#icon-plus"></use>
-                          </svg>
-                        </span>
+                        <div class="input-counter1">
+                          <span class="minus-btn" onselectstart="return false">
+                            <a href="#" class="minus_plus">-</a>
+                          </span>
+                          <div>
+                            <input type="text" value="1" class="counter-btn" readonly>
+                          </div>
+                          <span class="plus-btn" onselectstart="return false">
+                            <a href="#" class="minus_plus">+</a>
+                          </span>
+                        </div>
                         &nbsp;&nbsp;&nbsp;
                         <div class="input-counter">
                           <span>Size:</span>
                           <div>
                             <span class="minus-btn">
-                              <svg>
-                                <use xlink:href="./images/sprite.svg#icon-minus"></use>
-                              </svg>
+                              <a href="#" class="minus_plus">-</a>
                             </span>
-                            <input type="text" min="35" value="40" max="45" class="counter-btn">
+                            <input type="text" value="40" class="counter-btn">
                             <span class="plus-btn">
-                              <svg>
-                                <use xlink:href="./images/sprite.svg#icon-plus"></use>
-                              </svg>
+                              <a href="#" class="minus_plus">+</a>
                             </span>
 
                           </div>
@@ -219,17 +203,13 @@
                 <div class="product-details__btn">
                   <a class="add" href="#">
                     <span>
-                      <svg>
-                        <use xlink:href="./images/sprite.svg#icon-cart-plus"></use>
-                      </svg>
+                      <i class="fas fa-cart-plus"></i>
                     </span>
                     ADD TO CART
                   </a>
                   <a class="buy" href="#">
                     <span>
-                      <svg>
-                        <use xlink:href="./images/sprite.svg#icon-credit-card"></use>
-                      </svg>
+                      <i class="far fa-credit-card"></i>
                     </span>
                     BUY NOW
                   </a>
@@ -335,6 +315,8 @@
             <h1 class="primary__title">Related Products</h1>
           </div>
         </div>
+        <div id="related__p" class="row mb-4">
+        </div>
       </section>
       <!-- Latest Products -->
       <section class="section latest__products">
@@ -344,13 +326,13 @@
             <h1 class="primary__title">Latest Products</h1>
           </div>
         </div>
+        <div id="lasted__p" class="row mb-4">
+        </div>
       </section>
     </div>
   </main>
   <a href="#header" class="goto-top scroll-link">
-    <svg>
-      <use xlink:href="./images/sprite.svg#icon-arrow-up"></use>
-    </svg>
+    <i class="fas fa-arrow-up"></i>
   </a>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- Glide Carousel Script -->

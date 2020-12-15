@@ -1,14 +1,16 @@
-.fa-home{
+.fa-home {
     font-size: 20pt;
     margin-bottom: 10px;
 }
-.filter-button{
+
+.filter-button {
     /* border: 1px solid pink;
     border-radius: 5px; */
     width: 100%;
     text-align: left;
 }
-.filter-button:hover{
+
+.filter-button:hover {
     border: 1px solid pink;
     border-radius: 5px;
     color: white;

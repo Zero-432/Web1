@@ -2237,3 +2237,19 @@ Cart Area Media Query
     height: 1.5rem;
   }
 }
+
+#related__p {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#lasted__p {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* a:visited {
+  color: blue;
+} */
