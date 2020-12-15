@@ -76,7 +76,7 @@ function showDetail(id) {
 			for (let i = 0; i < product.media.link.length; i++) {
 				$('.product__pictures').append(
 					$('<div/>').addClass('pictures__container')
-						.prepend(`<img id="pic${i + 1}" class="picture" src="${product.media.link[i]}">`)
+						.prepend(`<img id="pic${i + 1}" class="picture" src="${product.media.link[i]}" onClick="clickImgs(this)">`)
 				)
 			}
 		}
@@ -90,12 +90,11 @@ function showDetail(id) {
 // $(".picture").on("click", function(imgs){
 // })
 function clickImgs(imgs) {
-	for (i = 1; i <= product.media.link.length; i++) {
-		var expandImg = document.getElementById("pic${i}");
-		var imgText = document.getElementById("pic");
+	// for (i = 1; i <= product.media.link.length; i++) {
+		var expandImg = document.getElementById("expandedImg");
 		expandImg.src = imgs.src;
 		expandImg.parentElement.style.display = "block"
-	}
+	// }
 }
 
 $(".minus_plus").on("click", function () {
