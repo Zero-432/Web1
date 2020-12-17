@@ -50,7 +50,6 @@
 .header div a:hover {
     text-decoration: underline;
     color: red;
-    font-size: 1.6rem;
 }
 
 .nav__menu ul {
@@ -130,7 +129,6 @@ body .header, input .header {
 
 .header .container {
     max-width: 150rem;
-    margin-right: 0 auto;
     align-content: center;
     padding: 0 1.6rem;
 }
@@ -151,7 +149,7 @@ body .header, input .header {
 }
 
 .header .nav__logo a {
-    font-size: 2.5rem;
+    font-size: 1.6rem;
     color: var(--black);
     padding: 1.6rem;
     font-weight: 700;
@@ -179,7 +177,7 @@ body .header, input .header {
 
 .header .nav__list .nav__link:link, .header .nav__list .nav__link:visited {
     display: flex;
-    font-size: 1.4rem;
+    font-size: 1rem;
     text-transform: uppercase;
     color: var(--black);
     transition: color 0.3s ease-in-out;
@@ -260,8 +258,8 @@ body .header, input .header {
 .header .search__input {
     position: absolute;
     display: block;
-    width: 200%;
-    height: 100%;
+    width: 120%;
+    height: 50%;
     border: none;
     outline: none;
     border-radius: 2rem;

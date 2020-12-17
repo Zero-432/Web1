@@ -88,18 +88,11 @@ function showDetail(id) {
 }
 // Tab_Gallery
 function clickImgs(imgs) {
-<<<<<<< HEAD
 	var expandImg = document.getElementById("expandedImg");
 	expandImg.src = imgs.src;
 	expandImg.parentElement.style.display = "block"
-=======
-	// for (i = 1; i <= product.media.link.length; i++) {
-		var expandImg = document.getElementById("expandedImg");
-		expandImg.src = imgs.src;
-		expandImg.parentElement.style.display = "block"
-	// }
->>>>>>> afbe4c7d319661ad6062305bd58287509bede632
 }
+
 
 $(".minus_plus").on("click", function () {
 	var $button = $(this);
