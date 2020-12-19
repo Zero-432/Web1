@@ -1,9 +1,10 @@
 var product_list = [];
+var total_products = [];
 var totalProducts;
 var related_products = [];
 var lasted_products = [];
 function returnHomePage() {
-	window.location.href = "mainpage.html";
+	window.location = "mainpage.html";
 }
 function getData(page) {
 	let url = `https://products-json.herokuapp.com/products?_page=${page}&_limit=12`;
@@ -11,6 +12,12 @@ function getData(page) {
 		product_list = data;
 		totalProducts = product_list.length;
 		renderProductList(product_list);
+	});
+}
+function get_totalProducts(page) {
+	let url = `https://products-json.herokuapp.com/products`;
+	return $.getJSON(url, function (data) {
+		total_products = data;
 	});
 }
 function getProductsCount() {
@@ -37,20 +44,7 @@ function renderProductList(products) {
 		)
 	});
 }
-async function getAll() {
-	for (let i = 0; i < 12; i++) {
-		let url = `https://products-json.herokuapp.com/products?_page=${page}&_limit=12`;
-		$.getJSON(url, function (data) {
-			total_products = total_products.concat(data.listProduct);
-		});
-	}
-}
 
-$('#product-info').ready(function () {
-	const urlParams = new URLSearchParams(window.location.search);
-	const product_id = urlParams.get('id');
-	showDetail(product_id);
-})
 
 function showDetail(id) {
 	let url = `https://products-json.herokuapp.com/products/${id}`;
@@ -93,6 +87,7 @@ function clickImgs(imgs) {
 	expandImg.parentElement.style.display = "block"
 }
 
+// Khi nhấn trừ số lương
 $(".minus_plus").on("click", function () {
 	var $button = $(this);
 	var oldValue = $button.closest('.input-counter1').find("input.counter-btn").val();
@@ -110,7 +105,7 @@ $(".minus_plus").on("click", function () {
 	$button.closest('.input-counter1').find("input.counter-btn").val(newVal);
 })
 
-// Pagination
+// Tạo Pagination
 
 function createPagination(total, limit) {
 	$("#product_list:gt(" + (limit - 1) + ")").hide();
@@ -139,10 +134,14 @@ function createPagination(total, limit) {
 		}
 	})
 }
+
+
+/// Khi trang home được load
 $(document).ready(function () {
 	var i = 1;
 	getData(i);
 	getProductsCount();
+	get_totalProducts();
 	$('#next-page').click(() => {
 		if (i < 12) {
 			getData(i + 1);
@@ -156,31 +155,37 @@ $(document).ready(function () {
 		}
 	})
 	$('#filter_price_1').click(() => {
-		let filtered_product = product_list.filter(x => x.productPrice == '550.000 VND');
+		let filtered_product = total_products.filter(x => x.productPrice == '550.000 VND');
 		console.log(filtered_product, product_list)
 		renderProductList(filtered_product);
 	})
 	$('#filter_price_2').click(() => {
-		let filtered_product = product_list.filter(x => x.productPrice == '450.000 VND');
+		let filtered_product = total_products.filter(x => x.productPrice == '450.000 VND');
 		renderProductList(filtered_product);
 	})
 	$('#filter_color_1').click(() => {
-		let filtered_product = product_list.filter(x => x.productColor == 'Insignia/Sulphur');
+		let filtered_product = total_products.filter(x => x.productColor == 'Insignia/Sulphur');
 		renderProductList(filtered_product);
 	})
 	$('#filter_color_2').click(() => {
-		let filtered_product = product_list.filter(x => x.productColor == 'Dark Grey');
+		let filtered_product = total_products.filter(x => x.productColor == 'Dark Grey');
 		renderProductList(filtered_product);
 	})
 	$('#filter_brand_1').click(() => {
-		let filtered_product = product_list.filter(x => x.productName.substr(0, 5) == 'Urbas');
+		let filtered_product = total_products.filter(x => x.productName.substr(0, 5) == 'Urbas');
 		renderProductList(filtered_product);
 	})
 	$('#filter_brand_2').click(() => {
-		let filtered_product = product_list.filter(x => x.productName.substr(0, 6) == 'Vintas');
+		let filtered_product = total_products.filter(x => x.productName.substr(0, 6) == 'Vintas');
 		renderProductList(filtered_product);
 	})
 });
+// Khi trang chi tiết sản phẩm load
+$('#product-info').ready(function () {
+	const urlParams = new URLSearchParams(window.location.search);
+	const product_id = urlParams.get('id');
+	showDetail(product_id);
+})
 
 // Related__P
 async function relatedProducts() {

@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Test</title>
+</head>
+<body>
+    <div id="products">
+
+    </div>
+    <script type="text/javascript" src="Test.js"></script>
+    <script type="text/javascript">
+        function initial() {
+            var divProd = document.getElementById("products");
+            var prodHtml = "<div><table><thead><tr><th>Id</th><th>Name</th><th>Amount</th><th>action</th></tr></thead><tbody>";
+            for (let i = 0; i < productList.length; i++) {
+                prodHtml += "<tr><td>" + productList[i].productId + "</td><td>" + productList[i].productName
+                    + "</td><td>" + productList[i].amount + "</td><td><i class='actionMinus' onclick='minus(" + i + ")'>-</i></td></tr>";
+            }
+            prodHtml += "</tbody></table></div>";
+            divProd.innerHTML = prodHtml;
+        }
+        function minus(index) {
+            var product = productList[index];
+            if (product && product.productId && product.amount > 0) {
+                product.amount--;
+                initial();
+            }
+        }
+        initial();
+        //jquery
+        //Angular
+    </script>
+    <style>
+        .actionMinus{
+            cursor:pointer;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Bootstrap của con mắt hehe, mò lắm mới ra á hừm hừm-->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        div {
+            border: none;
+        }
+
+        #Div1 {
+
+            float: left;
+            width: 50%
+        }
+
+        #Div2 {
+            float: left;
+            width: 50%;
+        }
+
+        button {
+
+            padding: 10px;
+            width: 49%;
+            box-sizing: border-box;
+            border: solid;
+            border-width: thin;
+            font-size: 1em;
+
+            font-weight: bold;
+        }
+
+        button a {
+            text-decoration: none;
+
+        }
+
+        button:nth-child(1) {
+            background: #fff;
+        }
+
+        button:nth-child(2) {
+            background: #191970;
+        }
+
+        hr {
+            width: 75%;
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
+        }
+
+        form {
+            margin-top: 30px;
+            width: 50%
+        }
+
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        form button {
+            background-color: #0099FF;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        form button:hover {
+            opacity: 0.8;
+        }
+
+        span {
+            position: absolute;
+            transform: translate(0, -50%);
+            top: 53.5%;
+            right: 14%;
+        }
+
+        .fa {
+            font-size: 20px;
+            color: #303030;
+        }
+
+        .wrapper {
+            position: relative;
+        }
+
+        #eye {
+            position: absolute;
+            right: 10px;
+            top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrap">
+        <div id="Div1">
+            <img src="Image/Maugiay.png" />
+
+        </div>
+
+    </div>
+    <div id="Div2" align="center">
+        <div style="align-content:center">
+            <h2>Đăng nhập</h2>
+
+            <button>
+                <img width="22px" src="Image/facebook.png" />
+                <a style="color: #fff; align-content:center" href="https://www.facebook.com/kieuly1812/"><i
+                        class="fa-fa-facebook"></i>Tiếp tục với Facebook</a>
+            </button> <br />
+            <br />
+            <button>
+                <img width="22px" src="Image/google.png" />
+                <a style="color:black; align-content:center" href="#"><i class="fa-fa-google"></i> Tiếp tục với
+                    Google</a>
+            </button>
+        </div>
+        <hr />
+
+        <div>
+            <form>
+
+                <div class="container">
+                    <label for="uname"><b>Email</b></label>
+                    <input id="email" type="text" placeholder="Nhập email" name="email" required>
+
+                    <label for="psw"><b>Mật khẩu</b></label>
+                    <div class="wrapper">
+                        <input type="password" placeholder="password" id="password" />
+                        <i id="eye" class="fa fa-eye" aria-hidden="true"></i>
+
+                    </div>
+
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember"> Nhớ mật khẩu
+                    </label>
+                    <button id="login_btn" type="button">Đăng nhập</button>
+                    <p>Bạn chưa đăng ký? <a href="Dang ky.html"><strong>Đăng ký</strong></a></p>
+
+                </div>
+
+
+            </form>
+        </div>
+
+
+
+
+    </div>
+
+    <script>
+        var password = document.getElementById('password');
+        var eye = document.getElementById('eye');
+        eye.addEventListener('click', togglepass);
+        function togglepass() {
+            eye.classList.toggle('active');
+            (password.type == 'password') ? password.type = 'text' : password.type = 'password';
+
+        }
+    </script>
+    <script src="./jquery/jquery-3.2.1.min.js"></script>
+    <script src="./auth.js"></script>
+</body>
+
+</html>

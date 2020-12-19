@@ -29,76 +29,79 @@
   <header id="header" class="header">
     <div class="navigation">
       <div class="container">
-        <nav class="nav">
-          <div class="nav__hamburger">
-            <i class="fas fa-bars"></i>
-          </div>
-
+        <nav class="navigate">
           <div class="nav__logo">
-            <a href="mainpage.html" class="scroll-link" style="font-family:'Star Jedi'">
-              THEBiGCiTYSHoES
+            <a href="#" class="scroll-link" style="font-family:'Star Jedi'">
+              THEBiGCiTYSHOES
             </a>
           </div>
-
           <div class="nav__menu">
-            <div class="menu__top">
-              <span class="nav__category"></span>
-              <a href="#" class="close__toggle">
-                <i class="fas fa-cross"></i>
-              </a>
-            </div>
             <ul class="nav__list">
               <li class="nav__item">
                 <a href="/" class="nav__link">NAM</a>
+                <ul class="hover__header">
+                  <li><a href="#">Sản phẩm mới</a></li>
+                  <li><a href="#">Tranning & Running</a></li>
+                  <li><a href="#">Sneaker</a></li>
+                  <li><a href="#">Sandal</a></li>
+                  <li><a href="#">Boots</a></li>
+                </ul>
               </li>
               <li class="nav__item">
                 <a href="/" class="nav__link">NỮ</a>
+                <ul class="hover__header">
+                  <li><a href="#">Sản phẩm mới</a></li>
+                  <li><a href="#">Giày thể thao</a></li>
+                  <li><a href="#">Giày cao gót</a></li>
+                  <li><a href="#">Giày búp bê</a></li>
+                  <li><a href="#">Sandal</a></li>
+                </ul>
               </li>
               <li class="nav__item">
                 <a href="#" class="nav__link">TRẺ EM</a>
+                <ul class="hover__header">
+                  <li><a href="#">Sản phẩm mới</a></li>
+                  <li><a href="#">Sandal</a></li>
+                  <li><a href="#">Dép</a></li>
+                  <li><a href="#">Giày tập đi</a></li>
+
+                </ul>
               </li>
               <li class="nav__item">
                 <a href="/" class="nav__link">PHỤ KIỆN</a>
+                <ul class="hover__header">
+                  <li><a href="#">Sản phẩm mới</a></li>
+                  <li><a href="#">Sandal</a></li>
+                  <li><a href="#">Dép</a></li>
+                  <li><a href="#">Giày tập đi</a></li>
+
+                </ul>
               </li>
               <li class="nav__item">
                 <a href="#" class="nav__link">SALES</a>
               </li>
               <li class="nav__item">
-                <a href="#" class="nav__link">Blog</a>
+                <a href="#" target="_blank" class="nav__link">BLOG</a>
               </li>
 
             </ul>
           </div>
-
+          <div class="container search">
+            <div class="searchbox">
+              <input type="text" maxlength="25" class="search__input" placeholder="Search..." />
+              <i class="fas fa-search icon__search"></i>
+            </div>
+          </div>
           <div class="nav__icons">
             <a href="#" class="icon__item">
               <i class="fas fa-user"></i>
             </a>
-
             <a href="#" class="icon__item">
-              <i class="fas fa-search"></i>
-            </a>
-
-            <a href="#" class="icon__item">
-              <i class="fas fa-shopping-cart"></i>
-              <span id="cart__total">1</span>
+              <i class="fas fa-shopping-cart" id="cart__icon"></i>
+              <span id="cart__total">0</span>
             </a>
           </div>
         </nav>
-      </div>
-    </div>
-    <div class="page__title-area">
-      <div class="container">
-        <div class="page__title-container">
-          <ul class="page__titles">
-            <li>
-              <a href="/">
-                <i class="fas fa-home"></i>
-              </a>
-            </li>
-            <li class="page__title"></li>
-          </ul>
-        </div>
       </div>
     </div>
   </header>
@@ -130,7 +133,7 @@
               <div class="product__picture" id="product__picture">
                 <!-- <div class="rect" id="rect"></div> -->
                 <div class="picture__container">
-                  <img id="expandedImg"/>
+                  <img id="expandedImg" />
                 </div>
               </div>
               <div class="zoom" id="zoom"></div>
@@ -331,6 +334,36 @@
       </section>
     </div>
   </main>
+  <a href="#header" class="goto-top scroll-link">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div id="logo" class="footer-top__box">
+          <img src="./images/d.png" />
+        </div>
+        <div class="footer-top__box">
+          <h3>HỖ TRỢ</h3>
+          <a href="#">bigcityshoes.web1@gmail.com</a>
+          <a href="#">0973-908-413</a>
+        </div>
+        <div class="footer-top__box">
+          <h3>THÔNG TIN</h3>
+          <a href="#">Điều khoản</a>
+          <a href="#">Liên hệ với chúng tôi</a>
+          <a href="#">Giao & Đổi trả hàng </a>
+          <a href="#">FAQs</a>
+        </div>
+        <div class="footer-top__box">
+          <h3>THEO DÕI</h3>
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">Youtube</a>
+        </div>
+      </div>
+    </div>
+  </footer>
   <a href="#header" class="goto-top scroll-link">
     <i class="fas fa-arrow-up"></i>
   </a>

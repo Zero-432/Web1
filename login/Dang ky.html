@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        input[type=text],
+        input[type=password] {
+            width: 50%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+
+        div {
+            border: none;
+
+        }
+
+        #Div1 {
+
+            float: left;
+            width: 50%
+        }
+
+        #Div2 {
+            float: left;
+            width: 50%;
+
+        }
+
+        hr {
+            width: 75%;
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
+        }
+
+        button {
+            background-color: #0099FF;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+            opacity: 0.9;
+        }
+
+        div form button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="register-container">
+        <div id="Div1">
+            <img src="Image/Maugiay.png" />
+
+        </div>
+
+        <div id="Div2" align="center">
+            <form onsubmit="onRegister()">
+                <div class="container">
+                    <h1>ĐĂNG KÝ</h1>
+                    <p>Vui lòng điền form để tạo tài khoản.</p>
+                    <hr>
+                    <input id="email" type="text" placeholder="Nhập Email" name="email" required> <br />
+
+                    <input id="password" type="password" placeholder="Nhập Password" name="psw" required> <br />
+
+                    <input id="confirm" type="password" placeholder="Nhập lại Password" name="psw-repeat" required>
+                    <div class="clearfix">
+                        <button id="register_btn" type="button" class="signupbtn">Đăng ký </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="./jquery/jquery-3.2.1.min.js"></script>
+    <script src="./auth.js"></script>
+</body>
+
+</html>
