@@ -125,12 +125,14 @@ function createPagination(total, limit) {
 			console.log(pageItem);
 			$(".pagination li").removeClass("active");
 			$(this).addClass("active");
-			$("#product_list").hide();
-			var grandTotal = limit * pageItem;
-			console.log(grandTotal);
-			for (var i = grandTotal - limit; i < grandTotal; i++) {
-				$("#product_list:eq(" + i + ")").show();
-			}
+			// hide product list đi làm clgt????
+			// $("#product_list").hide(); 
+			// var grandTotal = limit * pageItem;
+			// console.log(grandTotal);
+			getData(pageItem);
+			// for (var i = grandTotal - limit; i < grandTotal; i++) {
+			// 	$("#product_list:eq(" + i + ")").show();
+			// }
 		}
 	})
 }
@@ -142,18 +144,6 @@ $(document).ready(function () {
 	getData(i);
 	getProductsCount();
 	get_totalProducts();
-	$('#next-page').click(() => {
-		if (i < 12) {
-			getData(i + 1);
-			i += 1;
-		}
-	})
-	$('#prev-page').click(() => {
-		if (i > 1) {
-			getData(i - 1);
-			i -= 1;
-		}
-	})
 	$('#filter_price_1').click(() => {
 		let filtered_product = total_products.filter(x => x.productPrice == '550.000 VND');
 		console.log(filtered_product, product_list)
