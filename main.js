@@ -50,16 +50,6 @@ function showDetail(id) {
 	let url = `https://products-json.herokuapp.com/products/${id}`;
 	$.getJSON(url, function (data) {
 		let product = data;
-		// let product_detail = $('#product-info');
-		// var content =
-		//     `<img class='card-img-top' src="${product.media.link[0]}" alt='image'>` +
-		//     "<div class='card-body text-center'>" +
-		//     `<h5 class='card-title'>${product.productName}</h5>` +
-		//     `<p class='card-text'>Color: ${product.productColor}</p>` +
-		//     `<p class='card-text'>Price: ${product.productPrice}</p>` +
-		//     "</div>";
-		// product_detail.append(content);
-
 		$('.product-detail__content > h3').text(product.productName);
 		$('.page__title').text(product.productName);
 		$('.product-detail__content > .price .new__price').text(product.productPrice);
@@ -170,12 +160,97 @@ $(document).ready(function () {
 		renderProductList(filtered_product);
 	})
 });
+
+function loadCart() {
+	if (localStorage.getItem('cart')) {
+		return JSON.parse(localStorage.getItem('cart'));
+	}
+}
+function saveCart(cart) {
+	if (cart) {
+		return localStorage.setItem('cart', JSON.stringify(cart));
+	}
+	return false;
+}
+
 // Khi trang chi tiết sản phẩm load
 $('#product-info').ready(function () {
 	const urlParams = new URLSearchParams(window.location.search);
 	const product_id = urlParams.get('id');
 	showDetail(product_id);
+
+	var cart = loadCart() || []; // Mảng chứa các item có trong cart | load ra từ local hoặc [] nếu chưa có
+	$('#add_cart').click(function () {
+		let item = {
+			id: '',
+			name: '',
+			image: '',
+			price: 0
+		};
+		item.id = product_id;
+		item.name = $('.product-detail__content > h3').text();
+		item.image = $('#product__picture .picture__container img').attr('src');
+		item.price = parseInt($('.product-detail__content > .price .new__price').text().replace(',', '.').replace(' ', '').slice(0, -4));
+		// kiểm tra trong cart có sp này chưa
+		// tìm index của item trùng
+		let duplicate_index = cart.findIndex(cart_item => cart_item.product.id === item.id);
+		if (duplicate_index > -1) { // nếu trùng
+			cart[duplicate_index].quantity += parseInt($('#product_qty').val());
+		} else { // ko trùng
+			cart.push({
+				product: item,
+				quantity: parseInt($('#product_qty').val())
+			});
+		}
+		// lưu cart vào local
+		saveCart(cart);
+	})
+});
+// Khi trang cart load
+$('cart-container').ready(function () {
+	displayCart();
 })
+
+function displayCart() {
+	let cart = loadCart();
+	let total_price = 0;
+	cart.forEach(item => total_price += item.product.price * item.quantity);
+	$('.new__price').text(total_price.toString() + 'VND');
+	for (let item of cart) {
+		$('.cart-items').append(
+			`
+			<tr class="cake-top">
+				<td class="product__thumbnail">
+					<a href="#">
+						<img style="width:100%" src="${item.product.image}" alt="item image">
+					</a>
+				</td>
+				<td class="product__name">
+					<a href="#">${item.product.name}</a>
+					<br><br>
+					<small>White/6.25</small>
+				</td>
+				<td class="quantity">
+					<div class="product-right">
+						<input size="5" min="1" type="number" id="quantity" name="quantity"
+							value="${item.quantity}" class="form-control input-small">
+					</div>
+				</td>
+				<td class="price">
+					<h4>${item.product.price} VND</h4>
+				</td>
+				<td class="top-remove">
+					<h4>${item.quantity * item.product.price} VND</h4>
+					<div class="close">
+						<h5>Remove</h5>
+					</div>
+				</td>
+			</tr>
+			`
+		)
+	}
+
+}
 
 // Related__P
 async function relatedProducts() {
@@ -188,7 +263,6 @@ async function relatedProducts() {
 			related_products.push(item);
 		}
 	}
-	console.log(related_products);
 	related_products.forEach(item => {
 		let row = $('#related__p');
 		row.append(
@@ -231,3 +305,5 @@ async function lastedProducts() {
 		)
 	});
 }
+
+// export default { getData, get_totalProducts, getProductsCount };

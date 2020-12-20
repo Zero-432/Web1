@@ -379,3 +379,7 @@ html {
         transform: scale(1);
     }
 }
+
+.hover__header {
+    z-index: 1;
+}
